@@ -1,0 +1,22 @@
+{
+  "name": "bot-skype-batcafe",
+  "version": "1.0.0",
+  "description": "bot for skype",
+  "main": "index.js",
+  "scripts": {
+    "test": "testBot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RichardDonizette/bot-skype-batcafe.git"
+  },
+  "author": "Richard Donizete",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RichardDonizette/bot-skype-batcafe/issues"
+  },
+  "homepage": "https://github.com/RichardDonizette/bot-skype-batcafe#readme",
+  "dependencies": {
+    "botbuilder": "^3.15.0"
+  }
+}
