@@ -1,0 +1,14 @@
+{
+    "name": "batcafe",
+    "secretKey": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "batcafe",
+            "id": "http://localhost:3978/api/messages",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3978/api/messages"
+        }
+    ]
+}

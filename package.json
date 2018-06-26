@@ -4,7 +4,8 @@
   "description": "bot for skype",
   "main": "index.js",
   "scripts": {
-    "test": "testBot"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/RichardDonizette/bot-skype-batcafe#readme",
   "dependencies": {
-    "botbuilder": "^3.15.0"
+    "botbuilder": "^3.15.0",
+    "restify": "^7.2.1"
   }
 }
