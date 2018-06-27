@@ -1,8 +1,8 @@
 const config = require("./config.json");
-var restify = require('restify');
 var builder = require('botbuilder');
+var restify = require('restify');
 
-const { prefix } = config;
+const { id, pass } = config;
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -10,16 +10,16 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
 
-// Create chat connector for communicating with the Bot Framework Service
+// Cria a conexão com o chat de grupo
 var connector = new builder.ChatConnector({
-    appId: process.env.MicrosoftAppId,
-    appPassword: process.env.MicrosoftAppPassword
+    appId: process.env.MicrosoftAppId || id,
+    appPassword: process.env.MicrosoftAppPassword || pass
 });
 
-// Listen for messages from users 
+// verifica as msg dos usuarios 
 server.post('/api/messages', connector.listen());
 
-// Create a Bot
+// Criação do bot
 var bot = new builder.UniversalBot(connector);
 
 //Leitura dos comandos do bot
@@ -27,7 +27,7 @@ var bot = new builder.UniversalBot(connector);
 var intents = new builder.IntentDialog();
 bot.dialog('/', intents);
 
-// Handler for any command starting with a !
+// Verifica os comandos iniciados com o prefixo "!""
 function onCommand(session) {
     var msg = session.message.text;
     console.log('matched command', msg)
